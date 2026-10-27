@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Coquetea Fácil: practica qué decir cuando conoces a alguien. Lecciones cortas, ejercicios y ejemplos con el porqué. Pago único de 9,99 €.">
+<meta name="theme-color" content="#0f0d12">
+<meta property="og:title" content="Coquetea Fácil — Sabe qué decir, sin guiones">
+<meta property="og:description" content="Lecciones cortas, ejercicios y ejemplos con el porqué de cada mensaje. Pago único de 9,99 €.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://neo3k9-matrix.github.io/coquetea-facil/">
+<meta property="og:image" content="https://neo3k9-matrix.github.io/coquetea-facil/imagenes/1-portada.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<title>Coquetea Fácil — Sabe qué decir, sin guiones</title>
+<style>
+/* ===================================================================
+   CONFIGURACIÓN — lo único que hay que tocar antes de publicar:
+   1) ENLACE_PAGO (abajo, en el <script>): pega el enlace de Lemon Squeezy.
+   2) CORREO_CONTACTO (abajo, en el <script>): tu correo de soporte.
+   =================================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0d12; --bg2:#16131b; --card:#1d1923; --card2:#27222e;
+  --border:#302a38; --border2:#433b4f;
+  --txt:#f7f3f6; --muted:#b3a9b9; --muted2:#827889;
+  --brand:#ff6b57; --brand2:#ff4d7d; --brand3:#b25cff;
+  --ok:#3fcf8e; --warn:#f0b64a;
+  --grad:linear-gradient(135deg,var(--brand),var(--brand2) 52%,var(--brand3));
+  --radius:18px; --maxw:1080px;
+  --ease:cubic-bezier(.22,.9,.3,1);
+  --ff:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--txt);line-height:1.55;font-size:16px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;background:none;color:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--brand);outline-offset:3px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 26px;border-radius:999px;
+  font-weight:700;font-size:16.5px;line-height:1;min-height:52px;transition:transform .12s var(--ease),filter .18s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-buy{background:var(--grad);color:#fff;box-shadow:0 12px 32px rgba(255,107,87,.34)}
+.btn-buy:hover{filter:brightness(1.06);box-shadow:0 14px 38px rgba(255,107,87,.45)}
+.btn-ghost{background:var(--card2);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:var(--brand)}
+.btn-sm{padding:10px 16px;min-height:0;font-size:14px}
+.btn-block{width:100%}
+
+/* barra superior */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(15,13,18,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:820;font-size:18px;letter-spacing:-.4px}
+.logo .mark{width:36px;height:36px;border-radius:12px;background:var(--grad);display:grid;place-items:center;
+  box-shadow:0 4px 14px rgba(255,107,87,.4),inset 0 1px 0 rgba(255,255,255,.25)}
+
+/* hero */
+.hero{position:relative;padding:44px 0 40px;overflow:hidden;background:
+  radial-gradient(1000px 480px at 50% -170px,rgba(255,107,87,.24),transparent 70%),
+  radial-gradient(700px 380px at 95% 0,rgba(178,92,255,.14),transparent 60%)}
+.hero .wrap{display:grid;gap:38px;align-items:center}
+.hero-copy{text-align:center}
+.pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:650;color:#ffcbc3;
+  background:rgba(255,107,87,.12);border:1px solid rgba(255,107,87,.3);padding:6px 13px;border-radius:999px;margin-bottom:20px}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(63,207,142,.2)}
+h1{font-size:clamp(34px,9.5vw,58px);line-height:1.04;letter-spacing:-1.6px;font-weight:850;margin-bottom:16px}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{color:var(--muted);font-size:17.5px;max-width:470px;margin:0 auto 26px}
+.price-line{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:18px}
+.price-line .p{font-size:40px;font-weight:850;letter-spacing:-1.5px}
+.price-line .t{color:var(--muted);font-size:14.5px}
+.cta{display:flex;flex-direction:column;gap:11px;max-width:360px;margin:0 auto}
+.secure{margin-top:14px;font-size:13px;color:var(--muted2);display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}
+.secure b{color:var(--muted)}
+
+/* teléfono de muestra */
+.phone{width:290px;max-width:100%;margin:0 auto;border-radius:40px;padding:12px;background:#08070a;
+  border:1px solid #3a3342;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 6px rgba(255,255,255,.02),0 0 90px rgba(255,77,125,.16)}
+.screen{border-radius:30px;background:var(--bg);overflow:hidden;padding:14px 13px 16px}
+.screen .bar{display:flex;align-items:center;gap:9px;padding:8px 2px 12px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.screen .av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ffb36b,#ff6b57);display:grid;place-items:center;font-size:15px}
+.screen .nm{font-weight:700;font-size:13.5px}
+.screen .st{font-size:11px;color:var(--ok)}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:rgba(240,182,74,.14);color:#f3c06a;border:1px solid rgba(240,182,74,.34);margin-left:auto}
+.b{max-width:84%;padding:9px 12px;border-radius:15px;font-size:13.5px;line-height:1.45;margin-bottom:8px;animation:pop .45s var(--ease) both}
+.b.them{background:var(--card2);border:1px solid var(--border);border-bottom-left-radius:5px}
+.b.me{margin-left:auto;background:var(--grad);color:#fff;border-bottom-right-radius:5px;box-shadow:0 4px 14px rgba(255,107,87,.3)}
+.b.b2{animation-delay:.3s}.b.b3{animation-delay:.6s}
+.why{font-size:12px;color:var(--muted);background:var(--bg2);border:1px solid var(--border);border-left:2.5px solid var(--brand);
+  border-radius:10px;padding:9px 11px;margin-top:6px;animation:pop .45s var(--ease) .9s both}
+.why b{color:#ffcbc3}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* secciones */
+section.s{padding:56px 0}
+.head{text-align:center;max-width:620px;margin:0 auto 30px}
+.kick{font-size:12px;font-weight:750;letter-spacing:1.8px;color:var(--brand);text-transform:uppercase}
+.head h2{font-size:clamp(26px,6.6vw,38px);letter-spacing:-.8px;line-height:1.12;margin:9px 0 10px;font-weight:820}
+.head p{color:var(--muted);font-size:16px}
+.grid{display:grid;gap:13px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 45%),var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.card .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;margin-bottom:13px;
+  background:linear-gradient(135deg,rgba(255,107,87,.18),rgba(178,92,255,.14));border:1px solid rgba(255,107,87,.24)}
+.card h3{font-size:17px;letter-spacing:-.2px;margin-bottom:5px}
+.card p{color:var(--muted);font-size:14.5px}
+
+/* para quién */
+.fit{display:grid;gap:13px}
+.fit .card ul{list-style:none;margin-top:10px}
+.fit .card li{position:relative;padding:6px 0 6px 28px;color:var(--muted);font-size:15px}
+.fit .card li::before{position:absolute;left:0;top:6px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800}
+.fit .yes li::before{content:"✓";background:rgba(63,207,142,.16);color:var(--ok)}
+.fit .no li::before{content:"✕";background:rgba(239,107,107,.14);color:#ef8b8b}
+
+/* qué incluye */
+.inc{list-style:none;display:grid;gap:10px}
+.inc li{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px}
+.inc li .e{font-size:20px;line-height:1.3}
+.inc li b{display:block;font-size:15.5px}
+.inc li span{color:var(--muted);font-size:14px}
+
+/* pasos */
+.steps{display:grid;gap:13px;counter-reset:st}
+.steps .card{position:relative;padding-left:66px}
+.steps .card::before{counter-increment:st;content:counter(st);position:absolute;left:20px;top:20px;width:32px;height:32px;border-radius:50%;
+  background:var(--grad);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+
+/* precio */
+.price-card{max-width:440px;margin:0 auto;text-align:center;padding:30px 24px;border-radius:24px;position:relative;
+  background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--brand),var(--brand3)) border-box;
+  border:1.5px solid transparent;box-shadow:0 18px 50px rgba(255,107,87,.18)}
+.price-card .big{font-size:58px;font-weight:880;letter-spacing:-2.5px;line-height:1;margin:12px 0 4px}
+.price-card .once{color:var(--muted);font-size:15px;margin-bottom:20px}
+.price-card ul{list-style:none;text-align:left;margin:0 auto 22px;max-width:300px}
+.price-card li{padding:6px 0 6px 28px;position:relative;color:var(--muted);font-size:15px}
+.price-card li::before{content:"✓";position:absolute;left:0;top:6px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:800;background:rgba(63,207,142,.16);color:var(--ok)}
+.price-card .fine{font-size:12.5px;color:var(--muted2);margin-top:12px}
+
+/* preguntas frecuentes */
+.faq{max-width:720px;margin:0 auto;display:grid;gap:10px}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:0 18px;transition:border-color .2s}
+.faq details[open]{border-color:var(--border2)}
+.faq summary{list-style:none;cursor:pointer;padding:17px 30px 17px 0;font-weight:680;font-size:15.5px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:13px;font-size:24px;font-weight:400;color:var(--brand);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);font-size:15px;padding:0 0 17px}
+
+/* aviso honesto */
+.honest{max-width:720px;margin:0 auto;display:flex;gap:13px;background:linear-gradient(180deg,rgba(240,182,74,.1),rgba(240,182,74,.04));
+  border:1px solid rgba(240,182,74,.28);border-radius:18px;padding:20px;color:#ecd2a6;font-size:14.5px}
+.honest b{color:#f6cf86}
+.honest svg{flex:0 0 auto;margin-top:2px}
+
+footer{text-align:center;padding:40px 18px 110px;color:var(--muted2);font-size:13px;border-top:1px solid var(--border);margin-top:20px}
+footer p+p{margin-top:8px}
+footer a{color:var(--muted);text-decoration:underline}
+
+/* barra fija de compra en teléfono */
+.sticky-buy{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(15,13,18,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .3s var(--ease)}
+.sticky-buy.show{transform:none}
+.sticky-buy .lbl{flex:1;font-size:13px;color:var(--muted);line-height:1.3}
+.sticky-buy .lbl b{display:block;color:var(--txt);font-size:16px}
+.sticky-buy .btn{padding:13px 20px;min-height:0;font-size:15px}
+
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(16px);z-index:60;
+  background:var(--card2);border:1px solid var(--border2);padding:12px 18px;border-radius:14px;font-size:14px;max-width:90vw;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s var(--ease);text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+@media(min-width:820px){
+  .hero{padding:72px 0 64px}
+  .hero .wrap{grid-template-columns:1.15fr .85fr}
+  .hero-copy{text-align:left}
+  .hero .sub{margin-left:0}
+  .price-line{justify-content:flex-start}
+  .cta{flex-direction:row;margin:0;max-width:none}
+  .secure{justify-content:flex-start}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .fit{grid-template-columns:1fr 1fr}
+  .inc{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .sticky-buy{display:none}
+  footer{padding-bottom:46px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Coquetea Fácil, inicio">
+      <span class="mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h6A3.5 3.5 0 0 1 17 6.5v3a3.5 3.5 0 0 1-3.5 3.5H9.5L6 15.5V13a3.5 3.5 0 0 1-2-3.2z" fill="#fff"/><path d="M19 9.2a3 3 0 0 1 1 2.3v2.8a3 3 0 0 1-2 2.8V19l-3-2.7h-3.3a3 3 0 0 1-2.4-1.2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/><circle cx="8.3" cy="8" r="1" fill="#ff5a6e"/><circle cx="10.5" cy="8" r="1" fill="#ff5a6e"/><circle cx="12.7" cy="8" r="1" fill="#ff5a6e"/></svg></span>
+      Coquetea Fácil
+    </a>
+    <a class="btn btn-buy btn-sm js-buy" href="#comprar">Comprar · 9,99&nbsp;€</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="pill"><i aria-hidden="true"></i>Practica a tu ritmo · sin promesas falsas</span>
+        <h1>Sabe <span>qué decir</span>.<br>Sin guiones, sin presión.</h1>
+        <p class="sub">Coquetea Fácil es un pequeño entrenador en tu teléfono: lecciones cortas, ejercicios y ejemplos reales con el porqué de cada mensaje. Para que escribir o invitar a salir a alguien deje de darte bloqueo.</p>
+        <div class="price-line"><span class="p">9,99&nbsp;€</span><span class="t">pago único · sin suscripción</span></div>
+        <div class="cta">
+          <a class="btn btn-buy btn-block js-buy" href="#comprar">Comprar por 9,99&nbsp;€</a>
+          <a class="btn btn-ghost btn-block" href="#incluye">Ver qué incluye</a>
+        </div>
+        <div class="secure">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#827889" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <span><b>Pago seguro</b> con Lemon Squeezy · acceso inmediato por correo</span>
+        </div>
+      </div>
+
+      <div class="phone" role="img" aria-label="Ejemplo de la app: ella pregunta si se ven el fin de semana y la respuesta sugerida propone un café el sábado con una salida fácil.">
+        <div class="screen">
+          <div class="bar">
+            <span class="av" aria-hidden="true">🙂</span>
+            <div><div class="nm">Pasar a la cita</div><div class="st">● ejemplo guiado</div></div>
+            <span class="chip">ejemplo</span>
+          </div>
+          <div class="b them">Oye, al final ¿nos vemos el fin de semana? 🙂</div>
+          <div class="b me b2">Me encantaría. ¿Te parece un café el sábado por la tarde? Y si no puedes, buscamos otro día 👌</div>
+          <div class="b them b3">¡Perfecto, el sábado me parece genial!</div>
+          <div class="why"><b>Por qué funciona:</b> propones algo concreto (día y plan) y dejas una salida fácil, sin presión.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTAJAS -->
+  <section class="s">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Por qué funciona</div>
+        <h2>No es una lista de frases. Es práctica.</h2>
+        <p>Entiendes el porqué de cada mensaje y lo practicas en un sitio seguro, para que luego te salga con tus propias palabras.</p>
+      </div>
+      <div class="grid three">
+        <div class="card"><div class="ic">🧠</div><h3>Entiendes el porqué</h3><p>Cada ejemplo explica qué hace que funcione. Así no dependes de copiar, aprendes el truco de fondo.</p></div>
+        <div class="card"><div class="ic">🎯</div><h3>Practicas sin riesgo</h3><p>Ejercicios con feedback y una conversación por turnos para equivocarte donde no pasa nada.</p></div>
+        <div class="card"><div class="ic">⏱️</div><h3>Dos minutos al día</h3><p>Lecciones cortas y una racha diaria. Un paso pequeño cada día, sin agobios.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="s" style="padding-top:10px">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Para quién es</div>
+        <h2>Para ti si te suena esto</h2>
+      </div>
+      <div class="fit">
+        <div class="card yes">
+          <h3>Es para ti si…</h3>
+          <ul>
+            <li>Te quedas en blanco con el primer mensaje.</li>
+            <li>Te responden seco y no sabes cómo seguir.</li>
+            <li>Te cuesta dar el paso de chatear a una cita.</li>
+            <li>Te pones nervioso y le das mil vueltas antes de escribir.</li>
+            <li>Quieres hacerlo con respeto, sin trucos raros.</li>
+          </ul>
+        </div>
+        <div class="card no">
+          <h3>No es para ti si buscas…</h3>
+          <ul>
+            <li>Una fórmula para “conseguir” a alguien.</li>
+            <li>Tácticas de manipulación o presión.</li>
+            <li>Una app de citas para conocer gente.</li>
+            <li>Que alguien escriba los mensajes por ti.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ INCLUYE -->
+  <section class="s" id="incluye">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Qué incluye</div>
+        <h2>Todo lo que te llevas por 9,99&nbsp;€</h2>
+        <p>Versión completa, sin partes bloqueadas.</p>
+      </div>
+      <ul class="inc">
+        <li><span class="e">📚</span><div><b>8 lecciones cortas</b><span>Romper el hielo, respuestas secas, pasar a la cita, nervios, primer DM, perfil, escuchar y aceptar un no.</span></div></li>
+        <li><span class="e">💬</span><div><b>Situaciones reales con ejemplos</b><span>Varias formas de responder según el tono, con el porqué de cada una y botón para copiar.</span></div></li>
+        <li><span class="e">🎯</span><div><b>Ejercicios con feedback</b><span>Elige la mejor respuesta, reescribe mensajes y practica conversaciones por turnos.</span></div></li>
+        <li><span class="e">🧭</span><div><b>Entrenador de ideas</b><span>Describe tu situación y recibe ideas de ejemplo. Funciona con plantillas, no con IA.</span></div></li>
+        <li><span class="e">📈</span><div><b>Progreso y racha diaria</b><span>Lecciones hechas, ejercicios y días seguidos, para que veas cómo avanzas.</span></div></li>
+        <li><span class="e">🔒</span><div><b>Privada y sin conexión</b><span>Sin cuentas ni registro. Tus datos se quedan en tu teléfono.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="s" style="padding-top:10px">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Cómo funciona</div>
+        <h2>En un minuto la tienes</h2>
+      </div>
+      <div class="steps">
+        <div class="card"><h3>Compras</h3><p>Pagas 9,99&nbsp;€ una sola vez con tarjeta o PayPal, en una página de pago segura.</p></div>
+        <div class="card"><h3>Te llega al correo</h3><p>Recibes al momento el enlace de acceso y tu factura.</p></div>
+        <div class="card"><h3>La abres en el teléfono</h3><p>Funciona en el navegador. Añádela a tu pantalla de inicio y úsala como una app.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIO -->
+  <section class="s" id="comprar">
+    <div class="wrap">
+      <div class="price-card">
+        <div class="kick">Versión completa</div>
+        <div class="big">9,99&nbsp;€</div>
+        <div class="once">Pago único. Sin suscripción ni cargos ocultos.</div>
+        <ul>
+          <li>Todas las lecciones y ejercicios</li>
+          <li>Entrenador de ideas</li>
+          <li>Progreso y racha diaria</li>
+          <li>iPhone, Android y computadora</li>
+        </ul>
+        <a class="btn btn-buy btn-block js-buy" href="#comprar">Comprar por 9,99&nbsp;€</a>
+        <div class="fine">IVA incluido. El pago lo gestiona Lemon Squeezy, que emite la factura.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="s" style="padding-top:10px">
+    <div class="wrap">
+      <div class="head">
+        <div class="kick">Preguntas frecuentes</div>
+        <h2>Dudas habituales</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Es una suscripción?</summary><p>No. Pagas 9,99&nbsp;€ una vez y es tuya. No hay cargos mensuales ni renovaciones.</p></details>
+        <details><summary>¿Tengo que instalar algo?</summary><p>No. Se abre en el navegador del teléfono o de la computadora. Si quieres, puedes añadirla a tu pantalla de inicio para abrirla como una app.</p></details>
+        <details><summary>¿Funciona en iPhone y Android?</summary><p>Sí, en cualquier navegador moderno: Safari, Chrome, Firefox o Edge.</p></details>
+        <details><summary>¿Usa inteligencia artificial?</summary><p>No. Los ejemplos y las ideas del entrenador están escritos de antemano y se eligen según lo que escribes. Lo decimos claro dentro de la app.</p></details>
+        <details><summary>¿Me garantiza que voy a conseguir una cita?</summary><p>No, y desconfía de quien te lo prometa. Lo que decida otra persona no depende de ti. Lo que sí te da es práctica, ideas claras y más tranquilidad a la hora de escribir o invitar a salir.</p></details>
+        <details><summary>¿Qué pasa con mis datos?</summary><p>La app no tiene cuentas ni servidores. Tu progreso se guarda solo en tu dispositivo. Para el pago, Lemon Squeezy necesita tu correo para enviarte el acceso y la factura.</p></details>
+        <details><summary>¿Y si no me sirve?</summary><p>Escríbenos en los 14 días siguientes a la compra y te devolvemos el dinero, sin preguntas.</p></details>
+        <details><summary>¿Quién me cobra?</summary><p>Lemon Squeezy, una plataforma de pagos para productos digitales. Actúa como vendedor oficial: cobra, aplica el IVA de tu país y te envía la factura.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVISO HONESTO -->
+  <section class="s" style="padding-top:0">
+    <div class="wrap">
+      <div class="honest">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f0b64a" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        <div><b>Aviso honesto.</b> Coquetea Fácil no promete citas, pareja ni sexo, ni controlar lo que decida otra persona. Es una herramienta para practicar, saber qué decir y sentirte más tranquilo. Los ejemplos son de demostración, escritos de antemano; no son testimonios ni mensajes generados por IA. Respeto siempre: un “no” se acepta.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b style="color:var(--txt)">Coquetea Fácil</b> — aprende a conversar y coquetear sin complicarte.</p>
+  <p>Contacto: <a class="js-mail" href="#">correo de contacto</a></p>
+  <p>Pagos gestionados por Lemon Squeezy (vendedor oficial / Merchant of Record).</p>
+</footer>
+
+<div class="sticky-buy" id="stickyBuy" aria-hidden="true">
+  <div class="lbl"><b>9,99&nbsp;€</b>pago único</div>
+  <a class="btn btn-buy js-buy" href="#comprar" tabindex="-1">Comprar</a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   PEGA AQUÍ tu enlace de pago de Lemon Squeezy (o Gumroad).
+   Ejemplo: "https://tutienda.lemonsqueezy.com/buy/abc123..."
+   ============================================================ */
+var ENLACE_PAGO = "PEGA_AQUI_TU_ENLACE_DE_PAGO";
+var CORREO_CONTACTO = "PEGA_AQUI_TU_CORREO";
+
+(function(){
+  var listo = /^https:\/\//.test(ENLACE_PAGO);
+  var toast = document.getElementById('toast'), t;
+  function aviso(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(t);t=setTimeout(function(){toast.classList.remove('show')},2600);}
+
+  document.querySelectorAll('.js-buy').forEach(function(a){
+    if(listo){a.href=ENLACE_PAGO;a.rel='noopener';}
+    else a.addEventListener('click',function(e){
+      // en la sección de precio avisamos de que el pago aún no está activo
+      if(a.closest('.price-card')||a.closest('.sticky-buy')){e.preventDefault();aviso('El pago aún no está activo. Muy pronto 🙂');}
+    });
+  });
+
+  var mail = document.querySelector('.js-mail');
+  if(/@/.test(CORREO_CONTACTO)){mail.href='mailto:'+CORREO_CONTACTO;mail.textContent=CORREO_CONTACTO;}
+  else mail.parentNode.style.display='none';
+
+  // barra de compra fija en teléfono: aparece al pasar el hero, se oculta en la tarjeta de precio
+  var bar=document.getElementById('stickyBuy'), hero=document.querySelector('.hero'), price=document.getElementById('comprar');
+  function onScroll(){
+    var pastHero = hero.getBoundingClientRect().bottom < 0;
+    var r = price.getBoundingClientRect(), atPrice = r.top < innerHeight && r.bottom > 0;
+    bar.classList.toggle('show', pastHero && !atPrice);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script>
+</body>
+</html>
