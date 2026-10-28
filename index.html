@@ -357,7 +357,7 @@ footer a{color:var(--muted);text-decoration:underline}
         <details><summary>¿Usa inteligencia artificial?</summary><p>No. Los ejemplos y las ideas del entrenador están escritos de antemano y se eligen según lo que escribes. Lo decimos claro dentro de la app.</p></details>
         <details><summary>¿Me garantiza que voy a conseguir una cita?</summary><p>No, y desconfía de quien te lo prometa. Lo que decida otra persona no depende de ti. Lo que sí te da es práctica, ideas claras y más tranquilidad a la hora de escribir o invitar a salir.</p></details>
         <details><summary>¿Qué pasa con mis datos?</summary><p>La app no tiene cuentas ni servidores. Tu progreso se guarda solo en tu dispositivo. Para el pago, Lemon Squeezy necesita tu correo para enviarte el acceso y la factura.</p></details>
-        <details><summary>¿Y si no me sirve?</summary><p>Escríbenos en los 14 días siguientes a la compra y te devolvemos el dinero, sin preguntas.</p></details>
+        <details><summary>¿Y si no me sirve?</summary><p>Escríbenos en los 14 días siguientes a la compra y te devolvemos el dinero, sin preguntas. <a href="reembolsos.html">Ver política de reembolsos</a>.</p></details>
         <details><summary>¿Quién me cobra?</summary><p>Lemon Squeezy, una plataforma de pagos para productos digitales. Actúa como vendedor oficial: cobra, aplica el IVA de tu país y te envía la factura.</p></details>
       </div>
     </div>
@@ -378,6 +378,7 @@ footer a{color:var(--muted);text-decoration:underline}
   <p><b style="color:var(--txt)">Coquetea Fácil</b> — aprende a conversar y coquetear sin complicarte.</p>
   <p>Contacto: <a class="js-mail" href="#">correo de contacto</a></p>
   <p>Pagos gestionados por Lemon Squeezy (vendedor oficial / Merchant of Record).</p>
+  <p><a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a> · <a href="reembolsos.html">Reembolsos</a></p>
 </footer>
 
 <div class="sticky-buy" id="stickyBuy" aria-hidden="true">
@@ -409,7 +410,8 @@ var CORREO_CONTACTO = "PEGA_AQUI_TU_CORREO";
 
   var mail = document.querySelector('.js-mail');
   if(/@/.test(CORREO_CONTACTO)){mail.href='mailto:'+CORREO_CONTACTO;mail.textContent=CORREO_CONTACTO;}
-  else mail.parentNode.style.display='none';
+  // sin correo propio: el soporte va por el portal de pedidos de Lemon Squeezy
+  else {mail.href='https://app.lemonsqueezy.com/my-orders';mail.rel='noopener';mail.textContent='tu página de pedidos de Lemon Squeezy';}
 
   // barra de compra fija en teléfono: aparece al pasar el hero, se oculta en la tarjeta de precio
   var bar=document.getElementById('stickyBuy'), hero=document.querySelector('.hero'), price=document.getElementById('comprar');
