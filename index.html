@@ -72,9 +72,14 @@ button{font-family:inherit;border:none;background:none;color:inherit;cursor:poin
 h1{font-size:clamp(34px,9.5vw,58px);line-height:1.04;letter-spacing:-1.6px;font-weight:850;margin-bottom:16px}
 h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .sub{color:var(--muted);font-size:17.5px;max-width:470px;margin:0 auto 26px}
-.price-line{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:18px}
+.price-line{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 10px;margin-bottom:18px}
 .price-line .p{font-size:40px;font-weight:850;letter-spacing:-1.5px}
 .price-line .t{color:var(--muted);font-size:14.5px}
+/* oferta de lanzamiento: oculta por defecto, la muestra el script mientras dure */
+.oferta{display:none;margin:0 auto 16px;max-width:440px;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.4;text-align:center;
+  background:rgba(255,107,87,.12);border:1px solid rgba(255,107,87,.4);color:#ffd9d3}
+.oferta b{color:#fff}
+s.antes{font-size:.5em;font-weight:600;color:var(--muted2);letter-spacing:0;margin-left:6px}
 .cta{display:flex;flex-direction:column;gap:11px;max-width:360px;margin:0 auto}
 .secure{margin-top:14px;font-size:13px;color:var(--muted2);display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}
 .secure b{color:var(--muted)}
@@ -216,7 +221,8 @@ footer a{color:var(--muted);text-decoration:underline}
         <span class="pill"><i aria-hidden="true"></i>Practica a tu ritmo · sin promesas falsas</span>
         <h1>Sabe <span>qué decir</span>.<br>Sin guiones, sin presión.</h1>
         <p class="sub">Coquetea Fácil es un pequeño entrenador en tu teléfono: lecciones cortas, ejercicios y ejemplos reales con el porqué de cada mensaje. Para que escribir o invitar a salir a alguien deje de darte bloqueo.</p>
-        <div class="price-line"><span class="p">9,99&nbsp;€</span><span class="t">pago único · sin suscripción</span></div>
+        <div class="oferta">🎉 <b>Oferta de lanzamiento: −30&nbsp;%</b> · solo hasta el 4 de noviembre</div>
+        <div class="price-line"><span class="p js-precio">9,99&nbsp;€</span><span class="t">pago único · sin suscripción</span></div>
         <div class="cta">
           <a class="btn btn-buy btn-block js-buy" href="#comprar">Comprar por 9,99&nbsp;€</a>
           <a class="btn btn-ghost btn-block" href="#incluye">Ver qué incluye</a>
@@ -329,7 +335,8 @@ footer a{color:var(--muted);text-decoration:underline}
     <div class="wrap">
       <div class="price-card">
         <div class="kick">Versión completa</div>
-        <div class="big">9,99&nbsp;€</div>
+        <div class="oferta">🎉 <b>Precio de lanzamiento</b> hasta el 4 de noviembre. Después, 9,99&nbsp;€.</div>
+        <div class="big js-precio">9,99&nbsp;€</div>
         <div class="once">Pago único. Sin suscripción ni cargos ocultos.</div>
         <ul>
           <li>Todas las lecciones y ejercicios</li>
@@ -382,7 +389,7 @@ footer a{color:var(--muted);text-decoration:underline}
 </footer>
 
 <div class="sticky-buy" id="stickyBuy" aria-hidden="true">
-  <div class="lbl"><b>9,99&nbsp;€</b>pago único</div>
+  <div class="lbl"><b class="js-precio">9,99&nbsp;€</b>pago único</div>
   <a class="btn btn-buy js-buy" href="#comprar" tabindex="-1">Comprar</a>
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -394,6 +401,21 @@ footer a{color:var(--muted);text-decoration:underline}
    ============================================================ */
 var ENLACE_PAGO = "https://coquetea.gumroad.com/l/app?wanted=true";
 var CORREO_CONTACTO = "coqueteafacil@gmail.com";
+
+// Oferta de lanzamiento: el descuento LANZAMIENTO (-30 %) se aplica solo en Gumroad hasta esta fecha.
+// Pasada la fecha, la página vuelve sola a 9,99 €.
+var OFERTA_HASTA = new Date('2026-11-04T23:59:00+01:00');
+
+(function(){
+  if(Date.now() < OFERTA_HASTA.getTime()){
+    document.querySelectorAll('.oferta').forEach(function(e){e.style.display='block';});
+    document.querySelectorAll('.js-precio').forEach(function(e){e.innerHTML='6,99&nbsp;€<s class="antes">9,99&nbsp;€</s>';});
+    // el resto de menciones (botones, preguntas) pasan a 6,99 €
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT), n, cambios=[];
+    while((n=w.nextNode())){ if(n.nodeValue.indexOf('9,99\u00a0€')>-1 && !n.parentNode.closest('.js-precio,.oferta,s')) cambios.push(n); }
+    cambios.forEach(function(n){n.nodeValue=n.nodeValue.split('9,99\u00a0€').join('6,99\u00a0€');});
+  }
+})();
 
 (function(){
   var listo = /^https:\/\//.test(ENLACE_PAGO);
