@@ -17,7 +17,7 @@
 <style>
 /* ===================================================================
    CONFIGURACIÓN — lo único que hay que tocar antes de publicar:
-   1) ENLACE_PAGO (abajo, en el <script>): pega el enlace de Lemon Squeezy.
+   1) ENLACE_PAGO (abajo, en el <script>): pega el enlace de Gumroad.
    2) CORREO_CONTACTO (abajo, en el <script>): tu correo de soporte.
    =================================================================== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -223,7 +223,7 @@ footer a{color:var(--muted);text-decoration:underline}
         </div>
         <div class="secure">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#827889" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-          <span><b>Pago seguro</b> con Lemon Squeezy · acceso inmediato por correo</span>
+          <span><b>Pago seguro</b> con Gumroad · acceso inmediato por correo</span>
         </div>
       </div>
 
@@ -338,7 +338,7 @@ footer a{color:var(--muted);text-decoration:underline}
           <li>iPhone, Android y computadora</li>
         </ul>
         <a class="btn btn-buy btn-block js-buy" href="#comprar">Comprar por 9,99&nbsp;€</a>
-        <div class="fine">IVA incluido. El pago lo gestiona Lemon Squeezy, que emite la factura.</div>
+        <div class="fine">IVA incluido. El pago lo gestiona Gumroad, que te envía el recibo.</div>
       </div>
     </div>
   </section>
@@ -356,9 +356,9 @@ footer a{color:var(--muted);text-decoration:underline}
         <details><summary>¿Funciona en iPhone y Android?</summary><p>Sí, en cualquier navegador moderno: Safari, Chrome, Firefox o Edge.</p></details>
         <details><summary>¿Usa inteligencia artificial?</summary><p>No. Los ejemplos y las ideas del entrenador están escritos de antemano y se eligen según lo que escribes. Lo decimos claro dentro de la app.</p></details>
         <details><summary>¿Me garantiza que voy a conseguir una cita?</summary><p>No, y desconfía de quien te lo prometa. Lo que decida otra persona no depende de ti. Lo que sí te da es práctica, ideas claras y más tranquilidad a la hora de escribir o invitar a salir.</p></details>
-        <details><summary>¿Qué pasa con mis datos?</summary><p>La app no tiene cuentas ni servidores. Tu progreso se guarda solo en tu dispositivo. Para el pago, Lemon Squeezy necesita tu correo para enviarte el acceso y la factura.</p></details>
+        <details><summary>¿Qué pasa con mis datos?</summary><p>La app no tiene cuentas ni servidores. Tu progreso se guarda solo en tu dispositivo. Para el pago, Gumroad necesita tu correo para enviarte el acceso y el recibo.</p></details>
         <details><summary>¿Y si no me sirve?</summary><p>Escríbenos en los 14 días siguientes a la compra y te devolvemos el dinero, sin preguntas. <a href="reembolsos.html">Ver política de reembolsos</a>.</p></details>
-        <details><summary>¿Quién me cobra?</summary><p>Lemon Squeezy, una plataforma de pagos para productos digitales. Actúa como vendedor oficial: cobra, aplica el IVA de tu país y te envía la factura.</p></details>
+        <details><summary>¿Quién me cobra?</summary><p>Gumroad, una plataforma de pagos para productos digitales usada por miles de creadores. Se encarga del cobro y de los impuestos de tu país, y te envía el recibo.</p></details>
       </div>
     </div>
   </section>
@@ -377,7 +377,7 @@ footer a{color:var(--muted);text-decoration:underline}
 <footer>
   <p><b style="color:var(--txt)">Coquetea Fácil</b> — aprende a conversar y coquetear sin complicarte.</p>
   <p>Contacto: <a class="js-mail" href="#">correo de contacto</a></p>
-  <p>Pagos gestionados por Lemon Squeezy (vendedor oficial / Merchant of Record).</p>
+  <p>Pagos gestionados por Gumroad.</p>
   <p><a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a> · <a href="reembolsos.html">Reembolsos</a></p>
 </footer>
 
@@ -389,8 +389,8 @@ footer a{color:var(--muted);text-decoration:underline}
 
 <script>
 /* ============================================================
-   PEGA AQUÍ tu enlace de pago de Lemon Squeezy (o Gumroad).
-   Ejemplo: "https://tutienda.lemonsqueezy.com/buy/abc123..."
+   PEGA AQUÍ tu enlace de pago de Gumroad.
+   Ejemplo: "https://coquetea.gumroad.com/l/app"
    ============================================================ */
 var ENLACE_PAGO = "PEGA_AQUI_TU_ENLACE_DE_PAGO";
 var CORREO_CONTACTO = "coqueteafacil@gmail.com";
@@ -410,8 +410,8 @@ var CORREO_CONTACTO = "coqueteafacil@gmail.com";
 
   var mail = document.querySelector('.js-mail');
   if(/@/.test(CORREO_CONTACTO)){mail.href='mailto:'+CORREO_CONTACTO;mail.textContent=CORREO_CONTACTO;}
-  // sin correo propio: el soporte va por el portal de pedidos de Lemon Squeezy
-  else {mail.href='https://app.lemonsqueezy.com/my-orders';mail.rel='noopener';mail.textContent='tu página de pedidos de Lemon Squeezy';}
+  // sin correo propio: el soporte va por la biblioteca de compras de Gumroad
+  else {mail.href='https://app.gumroad.com/library';mail.rel='noopener';mail.textContent='tu biblioteca de Gumroad';}
 
   // barra de compra fija en teléfono: aparece al pasar el hero, se oculta en la tarjeta de precio
   var bar=document.getElementById('stickyBuy'), hero=document.querySelector('.hero'), price=document.getElementById('comprar');
